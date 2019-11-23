@@ -21,6 +21,8 @@ mongoose.connect(process.env.MONGO_URI, {
     debug(err);
     process.exit(1);
   });
+  
+mongoose.set('debug',process.env.NODE_ENV === 'development');
 
 var app = express();
 
